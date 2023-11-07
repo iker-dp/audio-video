@@ -47,13 +47,22 @@
         let audio = document.getElementById('player');
 
         function engegarAudio() {
-            // engeguem audio
-            audio.play();
+            // Si l'audio està pausat, l'engega
+            if (audio.paused == true) {
+                audio.play();
+
+            // Si no, el para
+            } else {
+                audio.pause();
+            }
+            
             // engeguem animació
             var waves = document.querySelectorAll('.wave');
             for (var i = 0; i < waves.length; i++) {
                 waves[i].classList.add('playing');
             }
+
+            console.log(audio.paused);
         }
 
     </script>
