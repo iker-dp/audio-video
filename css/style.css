@@ -41,6 +41,7 @@
 .controlButtons {
   display: flex;
   align-items: center;
+  width: 400px;
 }
 
 .controlButtons button {
@@ -50,7 +51,8 @@
 .volumeControl {
   display: flex;
   align-items: center;
-  width: 350px;
+  width: 170px;
+  margin-left: auto;
 }
 
 .volumeControl img {
