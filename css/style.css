@@ -38,21 +38,30 @@
     animation: wave 4s cubic-bezier( 0.40, 0.45, 0.63, 0.45) -.125s infinite, swell 7s ease -1.25s infinite;
 }
 
-.playButton {
-	padding-top: 10vh;
-	margin: 0px auto;
-	display: block;
+.controlButtons {
+  display: flex;
+  align-items: center;
 }
 
-#line2 {
-  stroke-width: 4px;
-  stroke: white;
-  fill: white;
-  stroke-linejoin: round;
-  stroke-linecap: round;
+.controlButtons button {
+  margin-right: 10px;
 }
-#line2.play {
-  d: "M 38 30 L 70 50 L 38 70";
+
+.volumeControl {
+  display: flex;
+  align-items: center;
+  width: 350px;
+}
+
+.volumeControl img {
+  width: 25px;
+  height: 25px;
+  margin-right: 10px;
+}
+
+input[type="range"] {
+  width: 100%;
+  margin-top: 10px;
 }
   
 @keyframes wave {

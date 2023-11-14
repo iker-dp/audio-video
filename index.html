@@ -29,6 +29,10 @@
                 play_arrow
             </span>
         </button>
+        <div class="volumeControl">
+            <a href="https://www.freeiconspng.com/img/35757" title="Image from freeiconspng.com"><img src="https://www.freeiconspng.com/uploads/sound-png-3.png" width="350" alt="Sound In Png" /></a>
+            <input type="range" id="volume" min="0" max="1" step="0.01" value="1">
+        </div>
     </div>
     <!-- Recordeu que heu de seguir les lleis en matèria de propietat intelectual.
          En aquest cas, cal nomenar i enllaçar l'autor i el tipus de llicència. 
@@ -45,6 +49,7 @@
     <!-- Cal seleccionar l'element d'àudio. -->
     <script>
         let audio = document.getElementById('player');
+        let volumeSlider = document.getElementById('volume');
 
         function engegarAudio() {
             // Si l'audio està pausat, l'engega
@@ -66,9 +71,12 @@
                 for (var i = 0; i < waves.length; i++) {
                     waves[i].style.animationPlayState = 'paused';
                 }
-            }
-            
+            }  
         }
+
+        volumeSlider.addEventListener('input', function() {
+            audio.volume = volumeSlider.value;
+        });
 
     </script>
 </body>
