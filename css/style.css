@@ -26,6 +26,7 @@
 
 .wave.playing {
     animation: wave 4s cubic-bezier( 0.40, 0.45, 0.63, 0.45) infinite;
+    animation-play-state: running;
 }
   
 .wave:nth-of-type(2) {
@@ -35,6 +36,23 @@
   
 .wave:nth-of-type(2).playing {
     animation: wave 4s cubic-bezier( 0.40, 0.45, 0.63, 0.45) -.125s infinite, swell 7s ease -1.25s infinite;
+}
+
+.playButton {
+	padding-top: 10vh;
+	margin: 0px auto;
+	display: block;
+}
+
+#line2 {
+  stroke-width: 4px;
+  stroke: white;
+  fill: white;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+#line2.play {
+  d: "M 38 30 L 70 50 L 38 70";
 }
   
 @keyframes wave {

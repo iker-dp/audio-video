@@ -50,19 +50,24 @@
             // Si l'audio està pausat, l'engega
             if (audio.paused == true) {
                 audio.play();
+            
+                // engeguem animació
+                var waves = document.querySelectorAll('.wave');
+                for (var i = 0; i < waves.length; i++) {
+                    waves[i].classList.add('playing');
+                    waves[i].style.animationPlayState = 'running';
+                }
 
             // Si no, el para
             } else {
                 audio.pause();
+
+                var waves = document.querySelectorAll('.wave.playing');
+                for (var i = 0; i < waves.length; i++) {
+                    waves[i].style.animationPlayState = 'paused';
+                }
             }
             
-            // engeguem animació
-            var waves = document.querySelectorAll('.wave');
-            for (var i = 0; i < waves.length; i++) {
-                waves[i].classList.add('playing');
-            }
-
-            console.log(audio.paused);
         }
 
     </script>
